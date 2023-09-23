@@ -17,5 +17,10 @@ public class ApiController {
 			return null;
 		}
 	}
+    @GetMapping("/test")
+	public String showMsg() {
+
+		return "Welcome ";
+	}
     
 }
