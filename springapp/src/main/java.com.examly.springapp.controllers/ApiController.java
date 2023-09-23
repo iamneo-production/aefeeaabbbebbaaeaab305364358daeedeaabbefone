@@ -1,10 +1,14 @@
 package com.examly.springapp.controllers;
-
 @RestController
 public class ApiController {
 
     @Autowired
     CustomerRepo custRepo;
+
+    @GetMapping("/test")
+	public String showMsg() {
+		return "Welcome ";
+	}
 
     @GetMapping("/{id}")
 	public Optional<Customer> getEmpDetails(@PathVariable(value = "id") int custId) {
@@ -17,10 +21,6 @@ public class ApiController {
 			return null;
 		}
 	}
-    @GetMapping("/test")
-	public String showMsg() {
-
-		return "Welcome ";
-	}
+    
     
 }
